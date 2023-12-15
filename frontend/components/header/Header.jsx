@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../src/assets/images/logo.png';
 import {Link, NavLink} from 'react-router-dom';
+import userimg from '../../src/assets/images/avatar.png'
 import {useState, useEffect} from 'react';
 
 const navLinks = [
@@ -53,6 +54,22 @@ const Header = () => {
 }
             </ul>
           </div>
+          {/* --------------Nav Right-------------------- */}
+          <div className="flex items-center gap-4 mr-4">
+            <div>
+              <Link to="/">
+                <figure className="w-[35px] h-[35px] rounded-full">
+                  <img src={userimg} alt="" className="w-full rounded-full" />
+                </figure>
+              </Link>
+            </div>
+
+              <Link to="/login">
+                  <button className="bg-blue-500 py-1 px-6 rounded-2xl text-white font-[600] h-[44px] justify-center">Login</button>        
+              </Link>
+
+          </div>
+
         </div>
       </div>
     </header>
