@@ -57,7 +57,7 @@ const Header = () => {
 
           {/* Navigation Menu */}
           <div className={`navigation ${menuVisible ? 'show__menu' : ''}`} ref={menuRef}>
-            <ul className="menu flex items-center gap-[2.7rem]">
+            <ul className = "menu flex items-center gap-[2.7rem]">
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <NavLink
@@ -65,7 +65,7 @@ const Header = () => {
                     className={(navClass) =>
                       navClass.isActive
                         ? 'text-blue-900 text-[16px] leading-7 font-[600]'
-                        : 'text-white text-[16px] leading-7 font-[500]'
+                        : 'text-gray-600 text-[16px] leading-7 font-[500]'
                     }
                     onClick={() => setMenuVisible(false)}
                   >
@@ -88,7 +88,7 @@ const Header = () => {
 
             {/* Login Button */}
             <Link to="/login">
-              <button className="bg-blue-500 py-1 px-6 rounded-2xl text-white font-[600] h-[44px]">
+              <button className="bg-blue-500 py-1 px-6 mr-8 rounded-2xl text-white font-[600] h-[44px]">
                 Login
               </button>
             </Link>
