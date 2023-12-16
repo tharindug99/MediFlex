@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { BiMenu } from 'react-icons/bi';
 import logo from '../../src/assets/images/logo.png';
 import userimg from '../../src/assets/images/avatar.png';
-
+import "../../src/index.css";
 
 const navLinks = [
   {
@@ -47,7 +47,9 @@ const Header = () => {
   const toggleMenu = () => setMenuVisible(!menuVisible);
 
   return (
-    <header className={`header ${menuVisible ? 'menu-open' : ''}`} ref={headerRef}>
+    <div className="w-full">
+    <header 
+            className={`header ${menuVisible ? 'menu-open' : ''}`} ref={headerRef}>
       <div className="container bg-gradient-to-r from-indigo-400 to-cyan-400">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -57,15 +59,15 @@ const Header = () => {
 
           {/* Navigation Menu */}
           <div className={`navigation ${menuVisible ? 'show__menu' : ''}`} ref={menuRef}>
-            <ul className = "menu flex items-center gap-[2.7rem]">
+          <ul className="menu flex items-center gap-[2.7rem]" style={{ margin: 0 }}>
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <NavLink
                     to={link.path}
                     className={(navClass) =>
                       navClass.isActive
-                        ? 'text-blue-900 text-[16px] leading-7 font-[600]'
-                        : 'text-gray-600 text-[16px] leading-7 font-[500]'
+                        ? 'my-2 py-1 border-b-2 text-blue-900 border-blue-900 hover:text-cyan-900 hover:border-cyan-200 transition border-b2 cursor-pointerspy={true} smooth={true}'
+                        : 'my-2 py-1 border-b-2 border-slate-800 hover:text-white hover:border-cyan-200 transition border-b2 cursor-pointerspy={true} smooth={true}'
                     }
                     onClick={() => setMenuVisible(false)}
                   >
@@ -88,19 +90,20 @@ const Header = () => {
 
             {/* Login Button */}
             <Link to="/login">
-              <button className="bg-blue-500 py-1 px-6 mr-8 rounded-2xl text-white font-[600] h-[44px]">
+              <button className="bg-blue-500 px-6 rounded-2xl text-white font-[600] h-[44px]">
                 Login
               </button>
             </Link>
 
             {/* Mobile Menu Icon */}
-            <span className="md:hidden" onClick={toggleMenu}>
+            <span className="md:hidden lg:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6" />
             </span>
           </div>
         </div>
       </div>
     </header>
+    </div>
   );
 };
 

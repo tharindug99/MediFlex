@@ -2,12 +2,16 @@ import React from 'react'
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import Routers from '../routes/Routers';
+import NavBar from '../components/header/NavBar';
 
 const Layout = () => {
   return (
-    <>
-        <Header/>
+    <>  
+        <NavBar/>
+        {/* <Header/> */}
         <main>
+            <Routers/>
+            <Routers/>
             <Routers/>
         </main>
         <Footer/>
