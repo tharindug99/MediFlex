@@ -10,13 +10,13 @@ const DoctorCard = ({ doctor }) => {
     avgRating,
     totalRating,
     photo,
-    specialzation,
-    totalPatient,
+    specialization,
+    totalPatients,
     hospital,
   } = doctor;
 
   return (
-    <div className="doctor-card p-3 lg:p-5 bg-blue-300 rounded-xl">
+    <div className="doctor-card p-3 lg:p-5 bg-white border-blue-400 border-2 rounded-xl">
       <div className="image-container">
         <img src={photo} className="w-20 h-30" alt="" />
       </div>
@@ -26,8 +26,8 @@ const DoctorCard = ({ doctor }) => {
       </h2>
 
       <div className="mt-2 lg:mt-4 flex items-center justify-between">
-        <span className="bg-[#CCF0F3] text-irisBlueColor py-1 px-2 lg:py-2 lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded">
-          {specialzation}
+        <span className="bg-[#CCF0F3] text-cyan-700 py-1 px-2 lg:py-2 lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded">
+          {specialization}
         </span>
 
         <div className="flex items-center gap-[6px]">
@@ -44,7 +44,7 @@ const DoctorCard = ({ doctor }) => {
       <div className="mt-[18px] lg:mt-5 flex flex-col lg:flex-row items-center justify-between">
         <div className="mb-3 lg:mb-0">
           <h3 className="text-[12px] leading-7 lg:text-[14px] lg:leading-[24px] font-semibold text-headingColor">
-            +{totalPatient} patients
+            +{totalPatients} patients
           </h3>
 
           <p className="text-[10px] leading-6 font-[400] text-textColor">
