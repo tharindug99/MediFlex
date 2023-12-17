@@ -6,6 +6,7 @@ import img2 from '../src/assets/images/Doctors-pana.png'
 import img3 from '../src/assets/images/Doctors-amico.png'
 import img4 from '../src/assets/images/services.png'
 import About from '../components/about/About';
+import DoctorList from '../components/doctors/DoctorList';
 
 const Home = () => {
   return (
@@ -146,7 +147,18 @@ const Home = () => {
 
 
         </div>
+
+        {/* ================feature section end==================== */}
+      {/* ===================Our great doctors=================== */}
+      <div className="lg:w-[740px] mx-auto ">
+                 <h2 className=" heading text-center font-medium text-[50px]">Our great doctors</h2> 
+                 <p className="pt-6 heading text-center font-medium text-gray-500 text-[20px]">Providing world class care for all......</p>  
+            </div>
+
+            <DoctorList/>
       </section>
+
+      
     </>
   );
 };

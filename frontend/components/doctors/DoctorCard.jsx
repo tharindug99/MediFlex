@@ -1,7 +1,8 @@
 import React from 'react';
-import starIcon from '../../assets/images/Star.png';
+import starIcon from '../../src/assets/images/Star.png';
 import { Link } from 'react-router-dom';
-import { BsArrowRight } from 'react-icons/bs'; 
+import { BsArrowRight } from 'react-icons/bs';
+
 
 const DoctorCard = ({ doctor }) => {
   const {
@@ -10,14 +11,14 @@ const DoctorCard = ({ doctor }) => {
     totalRating,
     photo,
     specialzation,
-    totalPatient, 
+    totalPatient,
     hospital,
   } = doctor;
 
   return (
-    <div className="p-3 lg:p-5">
-      <div>
-        <img src={photo} className="w-full" alt="" />
+    <div className="doctor-card p-3 lg:p-5 bg-blue-300 rounded-xl">
+      <div className="image-container">
+        <img src={photo} className="w-20 h-30" alt="" />
       </div>
 
       <h2 className="text-[18px] leading-[30px] lg:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">
@@ -30,23 +31,23 @@ const DoctorCard = ({ doctor }) => {
         </span>
 
         <div className="flex items-center gap-[6px]">
-          <span className="flex items-center gap-[6px] text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-semibold text-headingColor">
-            <img src={starIcon} alt="" /> {avgRating}
+          <span className="flex items-center gap-[6px] text-[12px] leading-6 lg:text-[14px] lg:leading-7 font-semibold text-headingColor">
+            <img src={starIcon} alt="" className="w-4 h-4" /> {avgRating}
           </span>
 
-          <span className="text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-[400] text-textColor">
+          <span className="text-[12px] leading-6 lg:text-[14px] lg:leading-7 font-[400] text-textColor">
             ({totalRating})
           </span>
         </div>
       </div>
 
-      <div className="mt-[18px] lg:mt-5 flex items-center justify-between">
-        <div>
-          <h3 className="text-[16px] leading-7 lg:text-[18px] lg:leading-[30px] font-semibold text-headingColor">
+      <div className="mt-[18px] lg:mt-5 flex flex-col lg:flex-row items-center justify-between">
+        <div className="mb-3 lg:mb-0">
+          <h3 className="text-[12px] leading-7 lg:text-[14px] lg:leading-[24px] font-semibold text-headingColor">
             +{totalPatient} patients
           </h3>
 
-          <p className="text-[14px] leading-6 font-[400] text-textColor">
+          <p className="text-[10px] leading-6 font-[400] text-textColor">
             At {hospital}
           </p>
         </div>
