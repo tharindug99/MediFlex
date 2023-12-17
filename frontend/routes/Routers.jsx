@@ -2,7 +2,7 @@ import React from 'react'
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
 import Login from '../pages/Login';
-import SignUp from '../pages/Signup';
+import SignUp from '../pages/SignUp';
 import Services from '../pages/Services';
 import Doctors from '../pages/Doctors/Doctors';
 import DoctorDetails from '../pages/Doctors/DoctorDetails';

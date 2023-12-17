@@ -15,6 +15,7 @@ const NavigationLinks = ({ links }) => {
           {link.display}
         </Link>
       ))}
+      
     </div>
   );
 };
@@ -93,16 +94,31 @@ const Navbar = () => {
         {isMobileMenuOpen && <NavigationLinks links={navLinks} />}
         {/* Desktop Menu (Left-aligned) */}
         <div className="lg:flex md:flex hidden lg:justify-end">
-          <ul className="lg:flex md:flex lg:space-x-4 md:space-x-4 lg:items-center">
-            {navLinks.map((link, index) => (
-              <li
-                key={index}
-                className="my-2 py-1 border-b-2 border-slate-800 hover:text-cyan-500 hover:border-cyan-500 transition border-b2 cursor-pointer"
-              >
-                <Link to={link.path}>{link.display}</Link>
-              </li>
-            ))}
-          </ul>
+        <ul className="lg:flex md:flex lg:space-x-4 md:space-x-4 lg:items-center text-center">
+  {navLinks.map((link, index) => (
+    <li
+      key={index}
+      className="text-center my-2 py-1 border-b-2 border-slate-800 hover:text-cyan-500 hover:border-cyan-500 transition border-b2 cursor-pointer mx-auto"
+    >
+      <Link to={link.path}>{link.display}</Link>
+    </li>
+  ))}
+  <li className="mx-auto">
+    <Link to="/login">
+      <button className="bg-blue-500 ml-10 px-4 rounded-lg text-white font-[600] h-[44px]">
+        Login
+      </button>
+    </Link>
+  </li>
+  <li className="mx-auto">
+    <Link to="/register">
+      <button className="bg-white text-blue-500 border-blue-500 border-2 px-4 rounded-lg font-[600] h-[44px]">
+        Sign up
+      </button>
+    </Link>
+  </li>
+</ul>
+
         </div>
         <button
           className={`${
