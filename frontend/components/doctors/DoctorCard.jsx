@@ -10,13 +10,13 @@ const DoctorCard = ({ doctor }) => {
     avgRating,
     totalRating,
     photo,
-    specialization,
+    profession,
     totalPatients,
     hospital,
   } = doctor;
 
   return (
-    <div className="doctor-card p-3 lg:p-5 bg-purple-500 border-white border-2 rounded-xl shadow-lg">
+    <div className="doctor-card p-3 lg:p-5 bg-white shadow-xl border-white border-2 rounded-xl shadow-lg">
       <div className="image-container flex justify-center items-center ">
         <img src={photo} className="w-1/2 h-1/2" alt="" />
       </div>
@@ -27,9 +27,12 @@ const DoctorCard = ({ doctor }) => {
         {name}
       </h2>
 
+       {/* Display the profession */}
+    
+
       <div className="mt-2 lg:mt-4 flex items-center justify-between">
         <span className="bg-[#CCF0F3] text-cyan-700 py-1 px-2 lg:py-2 lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded">
-          {specialization}
+          {profession}
         </span>
 
         <div className="flex items-center gap-[6px]">
