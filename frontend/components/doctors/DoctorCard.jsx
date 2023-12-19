@@ -16,10 +16,12 @@ const DoctorCard = ({ doctor }) => {
   } = doctor;
 
   return (
-    <div className="doctor-card p-3 lg:p-5 bg-white border-blue-400 border-2 rounded-xl">
-      <div className="image-container">
-        <img src={photo} className="w-20 h-30" alt="" />
+    <div className="doctor-card p-3 lg:p-5 bg-purple-500 border-white border-2 rounded-xl shadow-lg">
+      <div className="image-container flex justify-center items-center ">
+        <img src={photo} className="w-1/2 h-1/2" alt="" />
       </div>
+
+
 
       <h2 className="text-[18px] leading-[30px] lg:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">
         {name}
@@ -43,11 +45,11 @@ const DoctorCard = ({ doctor }) => {
 
       <div className="mt-[18px] lg:mt-5 flex flex-col lg:flex-row items-center justify-between">
         <div className="mb-3 lg:mb-0">
-          <h3 className="text-[12px] leading-7 lg:text-[14px] lg:leading-[24px] font-semibold text-headingColor">
+          <h3 className="text-[12px] leading-7 lg:text-[18px] lg:leading-[24px] font-semibold text-headingColor">
             +{totalPatients} patients
           </h3>
 
-          <p className="text-[10px] leading-6 font-[400] text-textColor">
+          <p className="text-[20px] leading-6 font-[400] text-white">
             At {hospital}
           </p>
         </div>

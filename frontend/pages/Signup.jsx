@@ -1,65 +1,106 @@
-import React, { useState } from 'react';
+import React from 'react';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const defaultTheme = createTheme();
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const handleSignUp = () => {
-    // Add your custom signup logic here
-    console.log('User created successfully!');
-    // You can redirect or perform other actions here
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
   };
 
-  const isPasswordMatch = password === confirmPassword;
-
   return (
-    <div className="container mx-auto mt-8 p-4">
-      <h1 className="text-3xl font-bold mb-4">Sign Up</h1>
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
-          Email:
-        </label>
-        <input
-          type="email"
-          id="email"
-          className="border rounded w-full py-2 px-3"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
-          Password:
-        </label>
-        <input
-          type="password"
-          id="password"
-          className="border rounded w-full py-2 px-3"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="confirmPassword" className="block text-gray-700 font-bold mb-2">
-          Confirm Password:
-        </label>
-        <input
-          type="password"
-          id="confirmPassword"
-          className={`border rounded w-full py-2 px-3 ${isPasswordMatch ? '' : 'border-red-500'}`}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        {!isPasswordMatch && (
-          <p className="text-red-500 text-sm mt-1">Passwords do not match.</p>
-        )}
-      </div>
-      <button
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        onClick={handleSignUp}
-        disabled={!isPasswordMatch}
-      >
-        Sign Up
-      </button>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box className="mt-8 flex flex-col items-center">
+          <Avatar className="m-1 bg-secondary-main">
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5" className="mt-2">
+            Sign up
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} className="mt-3">
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  label="I want to receive inspiration, marketing promotions and updates via email."
+                />
+              </Grid>
+            </Grid>
+            <Button type="submit" fullWidth variant="contained" className="mt-3 mb-2">
+              Sign Up
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 };
 

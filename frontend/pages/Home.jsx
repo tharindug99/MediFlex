@@ -91,10 +91,10 @@ const Home = () => {
                     <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">
                       15+
                     </h2>
-                    <div className="gap-y-60 gap-20">
-                        <span className="lg:w-[100px] h-2 bg-purple-500 rounded-full block mt-[-14px]" />
+                    <div>
+                        <span className="lg:w-[100px] sm:w-[600px] h-2 bg-purple-500 rounded-full block mt-[-14px]" />
                         <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">
-                      Clinic Locations
+                       Clinics Funtioning
                         </p>
                       </div>
                   </div>
