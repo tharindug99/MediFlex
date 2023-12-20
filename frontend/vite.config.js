@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     include: ['@mui/material'],
+    include: ['@mui/icons-material'],
   },
   // base:"/MediFlex_frontEnd"
 })
