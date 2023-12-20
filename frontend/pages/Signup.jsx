@@ -1,106 +1,110 @@
 import React from 'react';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const defaultTheme = createTheme();
 
 const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
+      firstName: data.get('firstName'),
+      lastName: data.get('lastName'),
       email: data.get('email'),
       password: data.get('password'),
     });
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box className="mt-8 flex flex-col items-center">
-          <Avatar className="m-1 bg-secondary-main">
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5" className="mt-2">
-            Sign up
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} className="mt-3">
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
-            </Grid>
-            <Button type="submit" fullWidth variant="contained" className="mt-3 mb-2">
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="bg-white p-8 rounded shadow-md max-w-xs w-full">
+        <div className="text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="mx-auto h-12 w-12 text-secondary-main"
+          >
+            {/* <LockOutlinedIcon /> */}
+          </svg>
+          <h1 className="text-2xl font-semibold mt-2">Sign up</h1>
+        </div>
+        <form onSubmit={handleSubmit} className="mt-3">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="firstName" className="block text-gray-700 text-sm font-medium">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                autoComplete="given-name"
+                className="mt-1 p-2 w-full border rounded-md"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="lastName" className="block text-gray-700 text-sm font-medium">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                autoComplete="family-name"
+                className="mt-1 p-2 w-full border rounded-md"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-gray-700 text-sm font-medium">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
+                className="mt-1 p-2 w-full border rounded-md"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block text-gray-700 text-sm font-medium">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                autoComplete="new-password"
+                className="mt-1 p-2 w-full border rounded-md"
+                required
+              />
+            </div>
+          </div>
+          <div className="mt-4">
+            <label className="flex items-center">
+              <input type="checkbox" className="mr-2" />
+              <span className="text-gray-700 text-sm">
+                I want to receive inspiration, marketing promotions, and updates via email.
+              </span>
+            </label>
+          </div>
+          <button
+            type="submit"
+            className="bg-secondary-main text-white px-4 py-2 rounded-md mt-3 mb-2 w-full"
+          >
+            Sign Up
+          </button>
+          <div className="flex justify-end">
+            <a href="/login" className="text-sm text-gray-500">
+              Already have an account? Sign in
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 
