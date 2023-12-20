@@ -13,6 +13,7 @@ const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Home/>}></Route>
+      <Route path="/MediFlex_frontEnd" element={<Home/>}></Route>
       <Route path="/home" element={<Home/>}></Route>
       <Route path="/doctors" element={<Doctors/>}></Route>
       <Route path="/doctors/:id" element={<DoctorDetails/>}></Route>
