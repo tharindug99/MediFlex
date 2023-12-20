@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,7 +13,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300">
       <div className="bg-white p-8 rounded shadow-md max-w-xs w-full">
         <div className="text-center">
           <svg
@@ -97,6 +96,15 @@ const SignUp = () => {
           >
             Sign Up
           </button>
+
+          {/* New SignUp button with a bluish gradient */}
+          <button
+            className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 text-white px-4 py-2 rounded-md w-full"
+            onClick={() => console.log("SignUp button clicked")}
+          >
+            SignUp
+          </button>
+
           <div className="flex justify-end">
             <a href="/login" className="text-sm text-gray-500">
               Already have an account? Sign in
