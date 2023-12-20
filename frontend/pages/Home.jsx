@@ -7,6 +7,7 @@ import img3 from '../src/assets/images/Doctors-amico.png'
 import img4 from '../src/assets/images/services.png'
 import About from '../components/about/About';
 import DoctorList from '../components/doctors/DoctorList';
+import Doctors from './Doctors/Doctors';
 
 const Home = () => {
   return (
@@ -155,7 +156,7 @@ const Home = () => {
                  <p className="pt-6 heading text-center font-medium text-gray-500 text-[20px]">Providing world class care for all......</p>  
             </div>
 
-            <DoctorList/>
+            <Doctors/>
       </section>
 
       

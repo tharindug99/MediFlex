@@ -45,7 +45,7 @@ const Doctors = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full lg:w-[1440px] sm:w-96">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full lg:w-[1440px] md:w-[760px] sm:w-96">
         <h2 className="text-2xl font-bold mb-4 text-center">Doctors</h2>
 
         {/* Search Bar */}
